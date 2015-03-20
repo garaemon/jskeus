@@ -98,6 +98,14 @@
                      seq2))
              seq1))
 
+(defun range (num)
+  "Return a list containing an arithmetic progression of integers."
+  (let ((ret nil))
+    (dotimes (i num)
+      (push i ret))
+    (nreverse ret)))
+
+
 (defun find-extreams (datum &key (key #'identity) (identity #'=) (bigger #'>))
   "Returns the elements of datum which maximizes key function"
   (let* ((max-value (funcall key (car datum)))
